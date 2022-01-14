@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+AUTHOR=${1?"missing bwsk author"}
+LINK=${2?"missing bwsk link"}
+./getlinks.js $LINK | sed -e '1,15 d' -e "s#\(.*\)#./text_bwsk $AUTHOR \1#"

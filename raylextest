@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+CONVERT=/usr/bin/ebook-convert
+META=/usr/bin/ebook-meta
+TITLE=${1?"missing book title!"}
+EPUB=$(find $HOME/epub -regex ''.*/$TITLE.epub -print)
+if [ ! -n "$EPUB" ]; then
+exit 1
+fi
+echo $EPUB
+if [ ! -d $TITLE ]; then
+mkdir $TITLE
+fi
+cd $TITLE
+AUTHOR=$($META $EPUB | grep Author | sed 's/^Author.*: \(.*\)/\1/')
+echo $AUTHOR > author.txt
+$CONVERT $EPUB all.txt
+opencc < all.txt > converted.txt

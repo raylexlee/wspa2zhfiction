@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+START=${1-1}
+ls -l xx??? | awk '{print $9;}' | nl -n rz -w 3 -v $START -s " " | awk '{printf("mv %s %s.txt\n",$2,$1);}' > raylex.sh
+

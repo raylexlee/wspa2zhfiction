@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+REGEX=${1-^第.[一二三四五六七八九十章]}
+#REGEX=${1-^[東這終後最作鞠雙忍序番第解關導推１２３４５６７８９０]}
+#REGEX=${1-^[^【※　１２３４５６７８９０]}
+grep $REGEX converted.txt | nl -n rz -w 4 -s " " > coverparameters.txt 
+node ../getlast_chapter.js > last_chapter.txt
+csplit -n 4 converted.txt "/$REGEX/" {*}
+rm xx0000

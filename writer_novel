@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+AUTHOR=${1?"missing 365novel author"}
+LINK=${2?"missing 365novel link"}
+./getlinks.js $LINK | grep  《 | sed 's/[《》]//g' | sed "s#\(.*\)#./novel_maketext $AUTHOR \1#" 

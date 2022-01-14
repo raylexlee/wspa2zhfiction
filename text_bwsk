@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+BOOK_AUTHOR=${1?"missing book title"}
+BOOK=${2?"missing book title"}
+BOOK_LINK=${3?"missing full path link from bwsk net"}
+if [ ! -d $BOOK ]; then
+mkdir $BOOK
+fi
+cd $BOOK
+echo $BOOK_AUTHOR > author.txt
+if [[ $BOOK_LINK =~ html$ ]]; then
+../getlinks.js $BOOK_LINK | grep '[0-9][0-9]\.htm$' | sed 's/ \([^h]\)/_\1/g' |  nl -n rz -w 3 -s " " | opencc > chaptertitlelinks.txt
+cat chaptertitlelinks.txt | awk '{printf("%s %s\n", $1, $2);}' > coverparameters.txt
+../getlast_chapter.js > last_chapter.txt
+cat chaptertitlelinks.txt | awk '{printf("../getchapter %s > %s.txt\n", $3, $1);}' > raylex.sh
+bash raylex.sh
+else
+../getbwsk.js $BOOK_LINK | sed '/^回目錄/ d' > 001.txt
+echo 001 > last_chapter.txt
+echo 001 $BOOK > coverparameters.txt
+fi
+cd ..
+./mk_text_subdir_nosend $BOOK
+

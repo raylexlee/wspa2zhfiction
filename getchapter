@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+CHAPTER_LINK=${1?"missing chapter link"}
+../getbwsk.js $CHAPTER_LINK | sed -e '/^前一頁/ d' -e '/^回目錄/ d' -e '/^后一頁/ d' -e '/^　　---------/,$ d' | opencc

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+unset START
+CURRENT=Raylex
+while read -r line 
+do 
+CATEGORY=$(echo $line | awk '{print $1;}')
+BOOK=$(echo $line | awk '{print $2;}')
+if [ $CATEGORY = $CURRENT ]; then
+echo "\""$BOOK"\"",
+else
+CURRENT=$CATEGORY
+if [ $START ]; then
+echo ],
+else
+START=Lee
+echo {
+fi
+echo "\""$CATEGORY"\"":[
+echo "\""$BOOK"\"",
+fi
+done
+echo ]}

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+DATA=/media/raylex/data/html/text
+GITHUB=$HOME/raylexlee.github.io/zhtts/text
+while read -r line 
+do 
+BOOK=$(echo $line | awk '{print $2;}')
+[ -d $DATA/$BOOK ] || [ -d $GITHUB/$BOOK ] || echo $line 
+done

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+BOOK=${1?'missing book title'}
+URLBOOK=${2?'missing open-lit link of book'}
+BID=$(echo $URLBOOK | sed 's/.*?\([^?]*\)/\1\\\&/')
+[ -d $BOOK ] || mkdir $BOOK;
+cd $BOOK
+../gethtml_links.js $URLBOOK > bookurl.txt
+grep $BID bookurl.txt | sed -e 's/\([^<]*\)<br>\([^>]*\)/\1\2/' -e 's/bid=/book.php?bid=/' -e 's/&/\\&/' | nl -n rz -w 3 -v 0 -s " " > coverlinks.txt
+awk '{printf("../getopenlitchapter %s > %s.txt\n", $3, $1);}' < coverlinks.txt > raylex.sh
+awk '{print $1,$2;}' < coverlinks.txt > coverparameters.txt
+bash raylex.sh
+../copybook2epubtext $BOOK

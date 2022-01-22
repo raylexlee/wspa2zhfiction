@@ -4,5 +4,5 @@ REGEX=${1-^第.[一二三四五六七八九十章]}
 #REGEX=${1-^[^【※　１２３４５６７８９０]}
 grep $REGEX converted.txt | nl -n rz -w 3 -s " " > coverparameters.txt 
 node ../getlast_chapter.js > last_chapter.txt
-csplit -n 3 converted.txt "/$REGEX/" {*}
+csplit -k -n 3 converted.txt "/$REGEX/" '{9999}'
 rm xx000

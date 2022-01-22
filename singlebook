@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-CONVERT=/usr/bin/ebook-convert
-META=/usr/bin/ebook-meta
+#CONVERT=/usr/bin/ebook-convert
+#META=/usr/bin/ebook-meta
+CONVERT=/Applications/calibre.app/Contents/MacOS/ebook-convert
+META=/Applications/calibre.app/Contents/MacOS/ebook-meta
 TITLE=${1?"missing book title!"}
 EPUB=$(find $HOME/epub -regex ''.*/$TITLE.epub -print)
 if [ ! -n "$EPUB" ]; then
@@ -17,10 +19,11 @@ $CONVERT $EPUB  all.txt
 opencc < all.txt > converted.txt
 #../prepare_coverparameters ^第
 ../prepare_coverparameters ^△
+#../prepare_coverparameters ^〈
 ../mov_with
 bash raylex.sh
 BOOK=$(pwd | sed 's#.*/\([^/]*\)#\1#')
-ZHTTS=/home/raylex/raylexlee.github.io/zhtts/text
+ZHTTS=$HOME/raylexlee.github.io/zhtts/text
 if [[ -d $ZHTTS/$BOOK ]]; then :; else
   mkdir $ZHTTS/$BOOK
 fi
@@ -30,3 +33,4 @@ sed '/^\ *$/ d' < $i > $ZHTTS/$BOOK/$i
 done
 #cp coverparameters.txt $ZHTTS/$BOOK/
 sed 's/△//' < coverparameters.txt > $ZHTTS/$BOOK/coverparameters.txt
+#sed 's/[〈〉〔〕]//g' < coverparameters.txt > $ZHTTS/$BOOK/coverparameters.txt

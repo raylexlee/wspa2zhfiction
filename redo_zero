@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+find $HOME/wspa2zhfiction/*/text/[0-9]* -size 0 | sed 's#.*/\(.*\)/text/\(.*\)\.txt#./get_text \1 \2#'

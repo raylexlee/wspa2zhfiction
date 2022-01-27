@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+BOOK=${1?'missing name of book...'}
+CHAPTER=${2?'missing 3 digit chapter number, eg 013'}
+[ ! -d $BOOK ] && exit 1;
+cd $BOOK
+LINK=$(grep $CHAPTER raylex.sh | awk '{print $2;}')
+../getnovelchapter $LINK > $CHAPTER.txt
+sed '/^\ *$/ d' < $CHAPTER.txt > text/$CHAPTER.txt

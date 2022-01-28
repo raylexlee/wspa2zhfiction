@@ -1,11 +1,2 @@
-./get_text 《董小宛》 014
-./get_text 明朝的皇帝 014
-./get_text 《慈禧全傳》 007
-./get_text 《慈禧全傳》 024
-./get_text 《慈禧全傳》 025
-./get_text 《慈禧全傳》 026
-./get_text 《慈禧全傳》 052
-./get_text 《慈禧全傳》 053
-./get_text 《慈禧全傳》 107
-./get_text 《漢宮名媛王昭君》 003
-./get_text 《大浪淘沙李鴻章》 007
+./get_text 04：地下世界 013
+./get_text 05：復仇女神 032

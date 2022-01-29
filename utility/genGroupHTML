@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+SCRIPTNAME=${1?'missing shell script name'}
+MAIN=${2-NoMain}
+awk '{print $2, $3;}' < $SCRIPTNAME > pairs.txt
+awk '{print $2;}' < $SCRIPTNAME | uniq -d > pages.txt
+for TITLE in $(cat pages.txt)
+do
+HTML=$TITLE.html
+sed "s/李潤明/$TITLE/" < head_group_template.txt > $HTML
+grep "^$TITLE" pairs.txt \
+ | awk '{printf("<li><a href='"'%s.html'"'>%s</a></li>\n",$2,$2);}' \
+ >> $HTML
+cat tail_group_template.txt >> $HTML
+done
+[ "$MAIN" == "NoMain" ] && exit 0;
+[ -f $MAIN.html ] && exit 0;
+HTML=$MAIN.html
+sed "s/李潤明/$TITLE/" < head_group_template.txt > $HTML
+awk '{printf("<li><a href='"'%s.html'"'>%s</a></li>\n",$1,$1);}' \
+ < pages.txt >> $HTML
+cat tail_group_template.txt >> $HTML
+for TITLE in $(cat pages.txt)
+do
+sed "s/index/$MAIN/" < $TITLE.html > RaylexLee
+mv RaylexLee $TITLE.html
+done

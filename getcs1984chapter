@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+CHAPTER_LINK=${1?"missing chapter link"}
+../getbwsk.js $CHAPTER_LINK > RaylexLee 
+sed -e '1,/adsbygoogle/ d' -e '/adsbygoogle/,$ d' < RaylexLee | opencc
+rm RaylexLee

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+BOOK_AUTHOR=${1?"missing book title"}
+BOOK=${2?"missing book title"}
+BOOK_LINK=${3?"missing full path link from 365novel.com"}
+if [ ! -d $BOOK ]; then
+mkdir $BOOK
+fi
+cd $BOOK
+echo $BOOK_AUTHOR > author.txt
+BOOK_PREFIX=$(echo $BOOK_LINK | sed 's#\.html$#/#')
+$HOME/wspa2zhfiction/getlinks.js $BOOK_LINK | grep $BOOK_PREFIX | sed '1 d' \
+ | sed 's/ \([^h]\)/_\1/g' | nl -n rz -w 3 -s " " | opencc > chaptertitlelinks.txt
+cat chaptertitlelinks.txt | awk '{printf("%s %s\n", $1, $2);}' > coverparameters.txt
+$HOME/wspa2zhfiction/getlast_chapter.js > last_chapter.txt
+cat chaptertitlelinks.txt | awk '{printf("../getcs1984chapter %s > %s.txt\n", $3, $1);}' > raylex.sh
+bash raylex.sh
+if [[ -d text ]]; then :; else
+  mkdir text
+fi
+for i in $(ls [0-9]*txt)
+do
+sed '/^\ *$/ d' < $i > text/$i
+done
+cp coverparameters.txt text/

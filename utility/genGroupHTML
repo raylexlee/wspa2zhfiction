@@ -14,6 +14,7 @@ cat tail_group_template.txt >> $HTML
 done
 awk '{print "./make_zhtextapp_html.txt",$2;}' < pairs.txt > make_new_htmls.sh
 awk '{printf("~/scp2zhtts %s.html\n", $2);}' < pairs.txt > copy2zhtts.sh
+awk '{printf("~/scp2githubio %s.html\n", $2);}' < pairs.txt > copy2githubio.sh
 [ "$MAIN" == "NoMain" ] && exit 0;
 [ -f $MAIN.html ] && exit 0;
 HTML=$MAIN.html

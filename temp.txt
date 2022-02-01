@@ -14,5 +14,5 @@
 電影院 
 殺手 
 其它 
-./novel_maketext 九把刀_
+./novel_maketext 黃鷹 
 ./cs1984_maketext 村上春樹 

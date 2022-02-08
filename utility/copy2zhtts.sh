@@ -1,11 +1,6 @@
-~/scp2zhtts 三兄弟.html
-~/scp2zhtts 失控的陪審團.html
-~/scp2zhtts 殺戮時刻.html
-~/scp2zhtts 遺囑.html
-~/scp2zhtts 超級說客.html
-~/scp2zhtts 毒氣室.html
-~/scp2zhtts 合夥人.html
-~/scp2zhtts 貧民律師.html
-~/scp2zhtts 終極證人.html
-~/scp2zhtts 鵜鶘案卷.html
-~/scp2zhtts 陷阱.html
+~/scp2zhtts 子彈上膛.html
+~/scp2zhtts 狼牙.html
+~/scp2zhtts 最後一顆子彈留給我.html
+~/scp2zhtts 危機四伏.html
+~/scp2zhtts 如臨大敵.html
+~/scp2zhtts 刺客.html

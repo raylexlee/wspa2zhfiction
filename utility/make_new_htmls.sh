@@ -1,11 +1,6 @@
-./make_zhtextapp_html.txt 三兄弟
-./make_zhtextapp_html.txt 失控的陪審團
-./make_zhtextapp_html.txt 殺戮時刻
-./make_zhtextapp_html.txt 遺囑
-./make_zhtextapp_html.txt 超級說客
-./make_zhtextapp_html.txt 毒氣室
-./make_zhtextapp_html.txt 合夥人
-./make_zhtextapp_html.txt 貧民律師
-./make_zhtextapp_html.txt 終極證人
-./make_zhtextapp_html.txt 鵜鶘案卷
-./make_zhtextapp_html.txt 陷阱
+./make_zhtextapp_html.txt 子彈上膛
+./make_zhtextapp_html.txt 狼牙
+./make_zhtextapp_html.txt 最後一顆子彈留給我
+./make_zhtextapp_html.txt 危機四伏
+./make_zhtextapp_html.txt 如臨大敵
+./make_zhtextapp_html.txt 刺客

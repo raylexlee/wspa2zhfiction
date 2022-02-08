@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+BOOK=${1?'missing book name...'}
+LINK=${2?'missing book url...'}
+./getbwsk.js $LINK | sed 's/ //g' | grep ^第 | awk -f convert.awk \
+| nl -n rz -w 3 -s " " | opencc > $BOOK/text/coverparameters.txt

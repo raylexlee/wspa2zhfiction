@@ -1,6 +1,5 @@
-~/scp2githubio 子彈上膛.html
-~/scp2githubio 狼牙.html
-~/scp2githubio 最後一顆子彈留給我.html
-~/scp2githubio 危機四伏.html
-~/scp2githubio 如臨大敵.html
-~/scp2githubio 刺客.html
+~/scp2githubio 靈山.html
+~/scp2githubio 一個人的聖經.html
+~/scp2githubio 有只鴿子叫紅唇兒.html
+~/scp2githubio 絕對信號.html
+~/scp2githubio 車站.html

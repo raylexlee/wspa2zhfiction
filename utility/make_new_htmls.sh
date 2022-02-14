@@ -1,7 +1,9 @@
-./make_zhtextapp_html.txt 異戀
-./make_zhtextapp_html.txt 男人這東西
-./make_zhtextapp_html.txt 失樂園
-./make_zhtextapp_html.txt 野蒿園
-./make_zhtextapp_html.txt 不分手的理由
-./make_zhtextapp_html.txt 紅花
-./make_zhtextapp_html.txt 如此之愛
+./make_zhtextapp_html.txt 十宗罪6
+./make_zhtextapp_html.txt 十宗罪5
+./make_zhtextapp_html.txt 十宗罪4
+./make_zhtextapp_html.txt 十宗罪3
+./make_zhtextapp_html.txt 十宗罪2
+./make_zhtextapp_html.txt 十宗罪1
+./make_zhtextapp_html.txt 十宗罪0
+./make_zhtextapp_html.txt 秦書
+./make_zhtextapp_html.txt 殘疾人宣言

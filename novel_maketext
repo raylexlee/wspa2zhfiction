@@ -2,9 +2,7 @@
 BOOK_AUTHOR=${1?"missing book title"}
 BOOK=${2?"missing book title"}
 BOOK_LINK=${3?"missing full path link from 365novel.com"}
-if [ ! -d $BOOK ]; then
-mkdir $BOOK
-fi
+[ -d $BOOK ] || mkdir $BOOK
 cd $BOOK
 echo $BOOK_AUTHOR > author.txt
 BOOK_PREFIX=$(echo $BOOK_LINK | sed 's#\.html$#/#')
@@ -13,9 +11,7 @@ cat chaptertitlelinks.txt | awk '{printf("%s %s\n", $1, $2);}' > coverparameters
 $HOME/wspa2zhfiction/getlast_chapter.js > last_chapter.txt
 cat chaptertitlelinks.txt | awk '{printf("../getnovelchapter %s > %s.txt\n", $3, $1);}' > raylex.sh
 bash raylex.sh
-if [[ -d text ]]; then :; else
-  mkdir text
-fi
+[ -d text ] || mkdir text
 for i in $(ls [0-9]*txt)
 do
 sed '/^\ *$/ d' < $i > text/$i

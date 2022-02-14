@@ -1,2 +1,9 @@
-./gen_coverparameters 危機四伏 http://365novel.com/book3/7957/
-./gen_coverparameters 如臨大敵 http://365novel.com/book3/7955/
+./gen_coverparameters 十宗罪6 http://365novel.com/book2/10876/
+./gen_coverparameters 十宗罪5 http://365novel.com/book4/10664/
+./gen_coverparameters 十宗罪4 http://365novel.com/book4/9336/
+./gen_coverparameters 十宗罪3 http://365novel.com/book/4517/
+./gen_coverparameters 十宗罪2 http://365novel.com/book/4515/
+./gen_coverparameters 十宗罪1 http://365novel.com/book/4514/
+./gen_coverparameters 十宗罪0 http://365novel.com/book/4609/
+./gen_coverparameters 秦書 http://365novel.com/book/4608/
+./gen_coverparameters 殘疾人宣言 http://365novel.com/book/4516/

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo Start : $(date)
+bash $1
+echo Final : $(date)

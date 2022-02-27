@@ -15,4 +15,5 @@
 殺手 
 其它 
 ./novel_maketext 黃鷹 
+./novel_maketext 當年明月 
 ./cs1984_maketext 村上春樹 

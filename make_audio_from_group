@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+GROUP=${1?'missing group name...'}
+for BOOK in $(grep \\\' $HOME/Sites/zhtts/$GROUP.html | sed "s#.*'\([^.]*\)\.html.*#\1#")
+do
+echo ./make_mp3_from_book $GROUP $BOOK
+done

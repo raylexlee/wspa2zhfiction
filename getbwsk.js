@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 const CDP = require('chrome-remote-interface');
-
 const chromeLauncher = require('chrome-launcher');
+const fs = require('fs');
 
 function launchChrome(headless=true) {
-  return chromeLauncher.launch({
-    // port: 9222, // Uncomment to force a specific port of your choice.
-    chromeFlags: [
+  const chromeParams = {};
+  chromeParams['chromeFlags'] = [
       '--window-size=412,732',
       '--disable-gpu',
       headless ? '--headless' : ''
-    ]
-  });
+    ];
+  if (fs.existsSync('/usr/bin/google-chrome')) {
+    chromeParams['chromePath'] = '/usr/bin/google-chrome';
+  }  
+  return chromeLauncher.launch(chromeParams);
 }
 
 

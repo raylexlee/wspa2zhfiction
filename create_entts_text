@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+if [ -f xx001 ]; then
+bash raylex.sh
+fi
+BOOK=$(pwd | sed 's#.*/\([^/]*\)#\1#')
+ZHTTS=/home/raylex/raylexlee.github.io/entts/text
+if [[ -d $ZHTTS/$BOOK ]]; then :; else
+  mkdir $ZHTTS/$BOOK
+fi
+for i in $(ls [0-9]*txt)
+do
+sed '/^\ *$/ d' < $i > $ZHTTS/$BOOK/$i
+done
+cp coverparameters.txt $ZHTTS/$BOOK/

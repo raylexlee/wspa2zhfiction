@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+AUTHORLINK=${1?"missing wikisource author link..."}
+AUTHOR=$(echo $AUTHORLINK | sed 's#.*:\([^:]*\)#\1#')
+./getlinks.js $AUTHORLINK \
+ | sed 's/ /_/g' | grep "^\(..*\)_https:\/\/en.wikisource.org\/wiki\/\1$" \
+ | sed 's/_https:/ https:/' | sed '/^Main_Page/ d' \
+ | awk '{print "./wikisource_book", $1, $2;}' \
+ > $AUTHOR.sh

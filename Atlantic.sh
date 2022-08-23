@@ -1,0 +1,11 @@
+./wikisource_book The_Time_Machine
+./wikisource_book The_Wonderful_Visit
+./wikisource_book The_Island_of_Doctor_Moreau
+./wikisource_book The_Sleeper_Awakes
+./wikisource_book The_Invisible_Man
+./wikisource_book The_War_of_the_Worlds
+./wikisource_book A_Dream_of_Armageddon
+./wikisource_book Other_Early_Fantastic_Stories
+./wikisource_book Anticipations
+./wikisource_book The_Food_of_the_Gods
+./wikisource_book The_Sea_Lady

@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-BOOK=${1?"missing book name..."}
-LINK=${2?"missing link of book"}
+BOOK=Emma
 [ -d $BOOK ] || mkdir $BOOK
 cd $BOOK
-../getlinks.js $LINK | grep 'Chapter_' > temp.txt
+../getlinks.js 'https://en.wikisource.org/wiki/Emma_(Austen)' > temp.txt
 vim temp.txt
 cat temp.txt | sed -e 's/ /_/g' -e 's/_https:/ https:/' |  nl -n rz -w 3 -s " " > titlechapter.txt
 cat titlechapter.txt | awk '{printf("../getwikisource_chapter %s '\''%s'\''\n",$1, $3)}' > raylex.sh
@@ -11,4 +10,4 @@ awk '{print $1,$2}' < titlechapter.txt > coverparameters.txt
 sh raylex.sh
 vim 001.txt
 ../create_entts_text
-rm -rf 'C:\Users\rayle\AppData\Local\lighthouse'*
+

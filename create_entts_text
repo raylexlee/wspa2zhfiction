@@ -9,6 +9,7 @@ if [[ -d $ZHTTS/$BOOK ]]; then :; else
 fi
 for i in $(ls [0-9]*txt)
 do
-sed '/^\ *$/ d' < $i > $ZHTTS/$BOOK/$i
+#sed '/^\ *$/ d' < $i > $ZHTTS/$BOOK/$i
+cat $i > $ZHTTS/$BOOK/$i
 done
 cp coverparameters.txt $ZHTTS/$BOOK/

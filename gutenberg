@@ -7,13 +7,16 @@ TXTLINK=$(../getlinks.js $LINK | grep 'Plain Text UTF-8' | sed 's/.*\(https.*\)/
 #TXTLINK=$LINK.txt.utf-8
 ../getbwsk.js $TXTLINK > all.txt
 sed 'H;1h;$!d;x; s/\([^\n]\)\n\([^ \n]\)/\1 \2/g' < all.txt > combine.txt
-sed -e '/^\[Illu/ d' -e '/END OF THE PROJECT GUTENBERG/i,$ d' < combine.txt > converted.txt
+sed -e '/^\[Illu/ d' -e '/END OF THE PROJECT GUTENBERG/,$ d' -e '/Project Gutenberg/ d' < combine.txt > converted.txt
+#vim converted.txt
 #../prepare_coverparameters  ^CHAPTER\\s[IXV][IXV]*$
 #../prepare_coverparameters  ^[IXV][IXV]*\\.\\s[A-Z]
 #../prepare_coverparameters ^Chapter
+#../prepare_coverparameters ^\\sChapter
 #../prepare_coverparameters ^\\[
-#../prepare_coverparameters ^CHAPTER
-../prepare_coverparameters ^\\s\\s[CP][HR][AO][HL]
+../prepare_coverparameters ^CHAPTER
+#../prepare_coverparameters ^[CT]H[AE]
+#../prepare_coverparameters ^\\s\\s[CP][HR][AO][HL]
 ../mov_with
 ../create_entts_text
 rm -rf 'C:\Users\rayle\AppData\Local\lighthouse'*

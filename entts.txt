@@ -34,3 +34,7 @@ James_Joyce Ulysses
 Mark_Twain The_Adventures_of_Tom_Sawyer
 Louisa_May_Alcott Little_Women
 James_M._Barrie Peter_Pan
+Herman_Melville Moby-Dick_or_The_Whale
+Oscar_Wilde The_Picture_of_Dorian_Gray
+Alexandre_Dumas_père The_Count_of_Monte_Cristo
+Emily_Brontë Wuthering_Heights

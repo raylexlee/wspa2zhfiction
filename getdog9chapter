@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+CHAPTER=${1?"missing chapter eg 001, 002"}
+LINK=${2?"missing link to chapter"}
+../getbwsk.js $LINK | opencc | sed -e '1,50 d' -e '/^  上一頁目錄/,$ d' > $CHAPTER.txt

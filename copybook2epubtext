@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-BOOK=${1?'missing book title'}
+BOOK=$(pwd | sed 's#.*/\([^/]*\)#\1#')
 if [[ -d $HOME/epub/text/$BOOK ]]; then :; else
   mkdir $HOME/epub/text/$BOOK
 fi
+cd text
 for i in $(ls [0-9]*txt)
 do
 sed '/^\ *$/ d' < $i > $HOME/epub/text/$BOOK/$i

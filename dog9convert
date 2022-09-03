@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+rm ???_?
+for i in $(ls 0*); do ../split_dog9chapter.js $i; done
+for FILE in $(ls ???_?)
+do
+PREF=$(echo $FILE | sed 's/\(...\)_\(.\)/\1/')
+POST=$(echo $FILE | sed 's/\(...\)_\(.\)/\2/')
+DESC=$(grep ^$PREF coverparameters.txt | awk '{print $2;}')
+echo $FILE $DESC$POST
+done

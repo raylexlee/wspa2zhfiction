@@ -6,13 +6,19 @@
 const fs = require('fs');
 const prefix = process.argv[2].split('.')[0];
 const Sentences = fs.readFileSync(process.argv[2], {encoding:'utf8', flag:'r'}).split('。');
-const max = 27000;
+const max = 18000;
 let start = 0;
-let n = Sentences[start].length;
-let i = 0;
-while (( n < max) && ( i < Sentences.length)) {
-  i++;
+let p = 0;
+let i ,n;
+do { 
+p++;
+n = Sentences[start].length;
+i = 1;
+while (( n < max) && ( (start + i) < Sentences.length)) {
   n += Sentences[start + i].length;
+  i++;
 }
-console.log(start,' ' ,start + i,' ', n, ' ', Sentences.length);
-
+const filename = ((start === 0) && ((start + i) === Sentences.length)) ? `${prefix}__` : `${prefix}_${p}`; 
+fs.writeFileSync(filename, Sentences.slice(start, start + i).join('。\n')+'。');
+start += i;
+} while (start < Sentences.length);

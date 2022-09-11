@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-REGEX=${1-^第.[一二三四五六七八九十章]}
+REGEX=${1-^　　第.[一二三四五六七八九十章]}
 #REGEX=${1-^[東這終後最作鞠雙忍序番第解關導推１２３４５６７８９０]}
 #REGEX=${1-^[^【※　１２３４５６７８９０]}
 grep $REGEX converted.txt | nl -n rz -w 3 -s " " > coverparameters.txt 

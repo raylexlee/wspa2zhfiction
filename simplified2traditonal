@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+SIMPLIFIED=${1?"missing simplied text file path .."}
+iconv -f $(uchardet $SIMPLIFIED) -t utf8 $SIMPLIFIED | opencc > all.txt

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+TITLE=${1?"missing title ..."}
+[ -d $TITLE ] || mkdir $TITLE
+cd $TITLE
+EPUB=$(find /mnt/c/Users/rayle/Downloads -regex ''.*$TITLE.*.rar -print)
+SIMPLIFIED=$(unrar x $EPUB | grep -e \.txt | sed 's#Extracting.\(.*\.txt\).*#\1#') 
+../simplified2traditonal $SIMPLIFIED
+vim all.txt

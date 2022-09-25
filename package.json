@@ -12,6 +12,7 @@
   "dependencies": {
     "chrome-launcher": "^0.15.1",
     "chrome-remote-interface": "^0.30.0",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "puppeteer": "^18.0.5"
   }
 }

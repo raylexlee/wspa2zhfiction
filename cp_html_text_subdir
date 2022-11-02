@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+../html_text_convert 
+nl -n rz -w 3 -s " " < raylex.txt > splitchapter.txt
+[ -d text ] || mkdir text
+awk '{print $1,$3;}' < splitchapter.txt > text/coverparameters.txt
+awk '{printf("cp %s text/%s.txt\n",$2,$1);}' < splitchapter.txt > qming.sh
+sh qming.sh

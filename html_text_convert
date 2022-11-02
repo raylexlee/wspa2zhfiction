@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+rm ???_??.txt
+cp /dev/null raylex.txt
+for i in $(ls 0*); do ../html_text_split $i; done
+for FILE in $(ls ???_??.txt)
+do
+PREF=$(echo $FILE | sed 's/\(...\)_\(..\)\.txt/\1/')
+POST=$(echo $FILE | sed 's/\(...\)_\(..\)\.txt/\2/')
+DESC=$(grep ^$PREF coverparameters.txt | awk '{print $2;}')
+echo "$FILE" "$DESC""$POST" >> raylex.txt
+done

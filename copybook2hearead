@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+BOOK=$(pwd | sed 's#.*/\([^/]*\)#\1#')
+if [[ -d $HOME/raylexlee.github.io/hearead/text/$BOOK ]]; then :; else
+  mkdir $HOME/raylexlee.github.io/hearead/text/$BOOK
+fi
+cd text
+for i in $(ls [0-9]*txt)
+do
+sed '/^\ *$/ d' < $i > $HOME/raylexlee.github.io/hearead/text/$BOOK/$i
+done
+cp coverparameters.txt $HOME/raylexlee.github.io/hearead/text/$BOOK/
+

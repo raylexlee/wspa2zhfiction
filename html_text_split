@@ -3,12 +3,13 @@ TXTFILE=${1?"missing filename eg 001.txt,002.txt,..."}
 CHAPTER=$(echo $TXTFILE | tr -d .tx)
 #REGEX=${2-^　　第.[一二三四五六七八九十卷]}
 #REGEX=${2-^　　[（第][0-9四][0-9十][章）]}
-REGEX=${2-^　　[0-9]}
+REGEX=${2-^　　【}
+#REGEX=${2-^　　[0-9]}
 #REGEX=${2-^　　第.[一二三四五六七八九十章]}
 #REGEX=${2-^[東這終後最作鞠雙忍序番第解關導推１２３４５６７８９０]}
 #REGEX=${2-^[^【※　１２３４５６７８９０]}
 csplit -k -n 2 $TXTFILE "/$REGEX/" '{9999}'
-rm xx00
+#rm xx00
 for f in $(ls xx??)
 do
 mv $f "$CHAPTER"_$(echo $f | tr -d x).txt

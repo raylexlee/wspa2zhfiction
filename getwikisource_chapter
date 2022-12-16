@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 CHAPTER=${1?"missing chapter eg 001, 002"}
 LINK=${2?"missing link to chapter"}
-../getbwsk.js $LINK | sed -e '/^\[/ d' -e '1,21 d' -e '/fr.wikisource.org/,$ d' -e 's/\.mw-parser-output.*\}//' > $CHAPTER.txt
+../getbwsk.js $LINK | sed -e '/^\[/ d' -e '1,33 d' -e '/bn.wikisource.org/,$ d' -e 's/\.mw-parser-output.*\}//' > $CHAPTER.txt

@@ -6,4 +6,4 @@ nl -n rz -w 3 -s " " < raylex.txt > titlechapter.txt
 awk '{print $1,$3;}' < titlechapter.txt > text/coverparameters.txt
 awk '{printf("mv %s text/%s.txt\n",$2,$1);}' < titlechapter.txt > qming.sh
 sh qming.sh
-~/upload2hanley_html_zhtts_text
+#~/upload2hanley_html_zhtts_text

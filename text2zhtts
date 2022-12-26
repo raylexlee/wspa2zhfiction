@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+BOOK=$(pwd | sed 's#.*/\([^/]*\)#\1#')
+ZHTTS=/home/raylex/raylexlee.github.io/zhtts/text
+mv text $ZHTTS/$BOOK

@@ -5,8 +5,9 @@
 */
 const fs = require('fs');
 const prefix = process.argv[2].split('.')[0];
-const Sentences = fs.readFileSync(process.argv[2], {encoding:'utf8', flag:'r'}).split('。');
-const max = 5700;
+//const Sentences = fs.readFileSync(process.argv[2], {encoding:'utf8', flag:'r'}).split('。');
+const Sentences = fs.readFileSync(process.argv[2], {encoding:'utf8', flag:'r'}).split('\n');
+const max = 6000;
 let start = 0;
 let p = 0;
 let i ,n;
@@ -19,6 +20,7 @@ while (( n < max) && ( (start + i) < Sentences.length)) {
   i++;
 }
 const filename = ((start === 0) && ((start + i) === Sentences.length)) ? `${prefix}__` : `${prefix}_${p}`; 
-fs.writeFileSync(filename, Sentences.slice(start, start + i).join('。\n')+'。');
+//fs.writeFileSync(filename, Sentences.slice(start, start + i).join('。\n')+'。');
+fs.writeFileSync(filename, Sentences.slice(start, start + i).join('\n'));
 start += i;
 } while (start < Sentences.length);

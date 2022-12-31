@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 rm ???_?
-for i in $(ls [0-9]*); do ../split_dog9chapter.js $i; done
+for i in $(ls [0-9]*); do ../evenly_split.sh $i; done
 for FILE in $(ls ???_?)
 do
 PREF=$(echo $FILE | sed 's/\(...\)_\(.\)/\1/')

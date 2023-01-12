@@ -11,11 +11,16 @@ SIZE=$(( $SIZE + ${#a[$i]} ))
 done
 let NFILES=(SIZE+MAX-1)/MAX
 let NMAX=(SIZE+NFILES-1)/NFILES
+#let NMAX=MAX
 #echo $MAX $SIZE $NFILES $NMAX
 let START=1
 let j=1
 SPLITNAME="$CHAPTER"_$j
-[ $NFILES -eq 1 ] && SPLITNAME="$CHAPTER"__
+if [ $NFILES -eq 1 ]; then 
+SPLITNAME="$CHAPTER"__
+cp $TXTFILE $SPLITNAME
+exit 0
+fi
 let n=0
 for i in ${!a[@]}
 do

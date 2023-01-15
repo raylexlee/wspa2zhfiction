@@ -18,20 +18,4 @@ AUTHOR=$($META $EPUB | grep Author | sed 's/^Author.*: \(.*\)/\1/')
 echo $AUTHOR > author.txt
 $CONVERT $EPUB  all.txt
 opencc < all.txt > converted.txt
-#../prepare_coverparameters ^第
-../prepare_coverparameters ^△
-#../prepare_coverparameters ^〈
-../mov_with
-bash raylex.sh
-BOOK=$(pwd | sed 's#.*/\([^/]*\)#\1#')
-ZHTTS=$HOME/raylexlee.github.io/zhtts/text
-if [[ -d $ZHTTS/$BOOK ]]; then :; else
-  mkdir $ZHTTS/$BOOK
-fi
-for i in $(ls [0-9]*txt)
-do
-sed '/^\ *$/ d' < $i > $ZHTTS/$BOOK/$i
-done
-#cp coverparameters.txt $ZHTTS/$BOOK/
-sed 's/△//' < coverparameters.txt > $ZHTTS/$BOOK/coverparameters.txt
-#sed 's/[〈〉〔〕]//g' < coverparameters.txt > $ZHTTS/$BOOK/coverparameters.txt
+vim converted.txt

@@ -7,4 +7,4 @@ REGEX=${1-^　　[（第][0-9四][0-9十][章）]}
 grep $REGEX converted.txt | nl -n rz -w 3 -s " " > coverparameters.txt 
 node ../getlast_chapter.js > last_chapter.txt
 csplit -k -n 3 converted.txt "/$REGEX/" '{9999}'
-rm xx000
+#rm xx000

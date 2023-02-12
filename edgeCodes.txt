@@ -25,13 +25,13 @@ he Hebrew תירִבְעִ
 hi Hindi हिन्दी
 hr Croatian Hrvatski
 hu Hungarian Magyar
-id Indonesian Bahasa Indonesia
+id Indonesian Bahasa
 is Icelandic Íslenska
 it Italian Italiano
 ja Japanese 日本語
-jv Javanese Basa Jawa
+jv Javanese Basa_Jawa
 ka Georgian ქართული
-kk Kazakh Қазақ тілі
+kk Kazakh Қазақ_тілі
 km Khmer ភាសាខ្មែរ
 kn Kannada ಕನ್ನಡ
 ko Korean 한국어
@@ -42,15 +42,15 @@ mk Macedonian Македонски
 ml Malayalam മലയാളം
 mn Mongolian Монгол
 mr Marathi मराठी
-ms Malay Bahasa Melayu
+ms Malay Bahasa_Melayu
 mt Maltese Malti
 my Myanmar မြန်မာစာ
-nb
+nb Norwegian Norwegian
 ne Nepali नेपाली
 nl Dutch Nederlands
 pl Polish Polski
 ps Pashto ﻮﺘښﭘ
-pt Portuguese Português Brasileiro
+pt Portuguese Português
 ro Romanian Română
 ru Russian Русский
 si Sinhala සිංහල
@@ -59,7 +59,7 @@ sl Slovenian Slovenščina
 so Somali Soomaali
 sq Albanian Shqip
 sr Serbian Srpski
-su Sundanese Basa Sunda
+su Sundanese Basa_Sunda
 sv Swedish Svenska
 sw Swahili Kiswahili
 ta Tamil தமிழ்
@@ -68,7 +68,7 @@ th Thai ไทย
 tr Turkish Türkçe
 uk Ukrainian Українська
 ur Urdu ﻭﺩُﺭﺍُ
-uz Uzbek Oʻzbek tili
-vi Vietnamese Tiếng Việt
+uz Uzbek Oʻzbek_tili
+vi Vietnamese Tiếng_Việt
 zh Chinese 中文
 zu Zulu isiZulu

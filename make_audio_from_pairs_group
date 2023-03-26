@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+GROUP=${1?'missing group name...'}
+for BOOK in $(grep $GROUP $HOME/Sites/zhtts/pairs.txt | awk '{print $2;}')
+do
+echo ./make_mp3_from_book $GROUP $BOOK
+done

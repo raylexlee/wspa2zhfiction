@@ -14,6 +14,6 @@ AuthorBooks.forEach(AuthorBook => {
       book[Author] = [ Book ];
     }
 });
-fs.writeFileSync('/home/raylex/raylexlee.github.io/entts/entts.js', `const book=${JSON.stringify(book)}`);
+fs.writeFileSync('../raylexlee.github.io/entts/entts.js', `const book=${JSON.stringify(book)}`);
 
 

@@ -5,7 +5,8 @@ FOLDER=${3-zhtts}
 CHAPTER=${4-000}
 start=$SECONDS
 TEXTDIR=$HOME/Sites/$FOLDER/text/$BOOK
-AUDIODIR=$HOME/audio/$BOOK
+AUDIODIR=$HOME/Sites/$FOLDER/audio/$BOOK
+#AUDIODIR=$HOME/audio/$BOOK
 [ -d $AUDIODIR ] || mkdir $AUDIODIR
 cd $AUDIODIR
 LAST_CHAPTER=$(tail -1 $TEXTDIR/coverparameters.txt | sed 's#^\(...\).*#\1#')

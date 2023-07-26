@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-../dog9convert  |  nl -n rz -w 3 -s " " > splitchapter.txt
+$HOME/wspa2zhfiction/dog9convert  |  nl -n rz -w 3 -s " " > splitchapter.txt
 [ -d text ] || mkdir text
 awk '{print $1,$3;}' < splitchapter.txt > text/coverparameters.txt
-awk '{printf("../trim_blank_lines %s text/%s.txt\n",$2,$1);}' < splitchapter.txt > qming.sh
+awk '{printf("$HOME/wspa2zhfiction/trim_blank_lines %s text/%s.txt\n",$2,$1);}' < splitchapter.txt > qming.sh
 sh qming.sh

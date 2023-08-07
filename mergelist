@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+for i in $(seq -w 498)
+do
+echo $(grep $i coverparameters.txt) $(grep $i t | awk '{print $2;}')
+done > c

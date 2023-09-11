@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 CHAPTER=${1?"missing chapter eg 001, 002"}
 LINK=${2?"missing link to chapter"}
-../getbwsk.js $LINK | sed -e '1,/^下一卷▶/ d' -e '/^　上一卷/,$ d' > $CHAPTER.txt
+../getbwsk.js $LINK | sed -e '1,/^下一回▶/ d' -e '/^　上一回/,$ d' > $CHAPTER.txt

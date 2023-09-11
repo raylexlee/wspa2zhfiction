@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+while read LINE
+  do
+    TEXT=$(echo $LINE | sed 's/\(.*\)\s\(https:.*\)/\1/')
+    LINK=$(echo $LINE | sed 's/\(.*\)\s\(https:.*\)/\2/')
+    DLINK=$(urldecode $LINK)
+    echo "$TEXT $DLINK"
+  done

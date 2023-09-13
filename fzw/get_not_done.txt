@@ -1,0 +1,3 @@
+../getlinks.js https://zh.wikisource.org/wiki/Portal:小说 | ../decodeURI  | egrep '^(.*)\shttp.*wiki.\1$' > links.txt
+
+for i in $(awk '{print $1;}' < links.txt); do [ -d $HOME/raylexlee.github.io/zhtts/text/$i ] || echo $i; done > not_done.txt

@@ -4,3 +4,5 @@ for i in $(awk '{print $1;}' < links.txt); do [ -d $HOME/raylexlee.github.io/zht
 
 ../getbwsk.js https://zh.wikisource.org/wiki/Portal:小说 > groups.txt
 vim groups.txt
+
+for i in $(grep 世情小說 groups.txt | awk '{print $2;}') ; do [ -d $HOME/raylexlee.github.io/zhtts/text/$i ] && echo $i; done > 世情小說.txt

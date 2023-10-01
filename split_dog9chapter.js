@@ -14,6 +14,7 @@ const nFiles = Math.ceil(size / max);
 //const nMax = Math.ceil(size / nFiles);
 const nMax = max;
 //console.log(max,' ',size,' ',nFiles,' ',nMax)
+const Digit='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let start = 0;
 let p = 0;
 let i ,n;
@@ -25,7 +26,7 @@ while (( n < nMax) && ( (start + i) < Sentences.length)) {
   n += Sentences[start + i].length;
   i++;
 }
-const filename = ((start === 0) && ((start + i) === Sentences.length)) ? `${prefix}__` : `${prefix}_${p}`; 
+const filename = ((start === 0) && ((start + i) === Sentences.length)) ? `${prefix}__` : `${prefix}_${Digit[p]}`; 
 //fs.writeFileSync(filename, Sentences.slice(start, start + i).join('。\n')+'。');
 fs.writeFileSync(filename, Sentences.slice(start, start + i).join('\n'));
 start += i;

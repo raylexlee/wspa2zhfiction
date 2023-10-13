@@ -8,13 +8,14 @@ const fs = require('fs');
 const prefix = process.argv[2].split('.')[0];
 //const Sentences = fs.readFileSync(process.argv[2], {encoding:'utf8', flag:'r'}).split('。');
 const Sentences = fs.readFileSync(process.argv[2], {encoding:'utf8', flag:'r'}).split('\n');
-const max = 5700;
+//const max = 5700;
+const max = 7500;
 const size = Sentences.map(e => e.length).reduce((a, c) => a + c);
 const nFiles = Math.ceil(size / max);
 //const nMax = Math.ceil(size / nFiles);
 const nMax = max;
 //console.log(max,' ',size,' ',nFiles,' ',nMax)
-const Digit='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const Digit='@ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let start = 0;
 let p = 0;
 let i ,n;

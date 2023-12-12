@@ -15,7 +15,8 @@ const nFiles = Math.ceil(size / max);
 //const nMax = Math.ceil(size / nFiles);
 const nMax = max;
 //console.log(max,' ',size,' ',nFiles,' ',nMax)
-const Digit='@ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//const Digit='@ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const Digit='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let start = 0;
 let p = 0;
 let i ,n;

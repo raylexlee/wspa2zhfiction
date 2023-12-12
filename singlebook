@@ -4,8 +4,8 @@ META=/usr/bin/ebook-meta
 #CONVERT=/Applications/calibre.app/Contents/MacOS/ebook-convert
 #META=/Applications/calibre.app/Contents/MacOS/ebook-meta
 TITLE=${1?"missing book title!"}
-EPUB=$(find $HOME/epub -regex ''.*/$TITLE.epub -print)
-#EPUB=$(find /mnt/c/Users/rayle/Downloads/ -regex ''.*/$TITLE.epub -print)
+#EPUB=$(find $HOME/epub -regex ''.*/$TITLE.epub -print)
+EPUB=$(find /mnt/c/Users/rayle/Downloads/ -regex ''.*/$TITLE.epub -print)
 if [ ! -n "$EPUB" ]; then
 exit 1
 fi

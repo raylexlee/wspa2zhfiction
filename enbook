@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+TITLE=${1?"missing title ..."}
+[ -d $TITLE ] || mkdir $TITLE
+cd $TITLE
+EPUB=$(find $HOME/hemingway -regex ''.*$TITLE.* -print)
+ebook-convert $EPUB all.txt
+vim all.txt

@@ -12,11 +12,12 @@ do
   ebook-convert $i t.txt  
   sed '1,/《好讀書櫃》/ d' < t.txt >> converted.txt
 done 
-../prepare_coverparameters ^[卷第]
+#../prepare_coverparameters ^[卷第]
+../prepare_coverparameters
 ../mov_with
 bash raylex.sh
-awk '{ print $2;}' < coverparameters.txt | awk -f ../fillSection.awk  | nl -n rz -w 3 -s " " > t
-cp coverparameters.txt coverparameters.txt.original
-mv t coverparameters.txt
+#awk '{ print $2;}' < coverparameters.txt | awk -f ../fillSection.awk  | nl -n rz -w 3 -s " " > t
+#cp coverparameters.txt coverparameters.txt.original
+#mv t coverparameters.txt
 cd ..
 ./mk_text_subdir $BOOK

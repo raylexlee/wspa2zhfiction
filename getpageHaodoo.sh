@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-LINK=${1?'missing haodoo page link ...'}
-./getlinks.js $LINK | grep ^[【《] | sed "s#.\(.*\).\s\(.*\)#./gethaodooEpub.sh \1 '\2'#" 
+CATEGORY=${1?'missing category eg mystery, martial ..'}
+PAGE=${2-1}
+./getlinks.js 'https://www.haodoo.net/?M=hd&P='"$CATEGORY"-"$PAGE" | grep ^[【《] | sed "s#.\(.*\).\s\(.*\)#./gethaodooEpub.sh \1 '\2'#" > "$CATEGORY""$PAGE".txt 
 rm -rf 'C:'*

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 AUTHOR=${1-金庸}
-LANG=${2-繁中}
+LANG=${2-zho}
 BOOK=$(pwd | sed 's#.*/\([^/]*\)#\1#')
 TXT=$BOOK.txt
 cp /dev/null $TXT

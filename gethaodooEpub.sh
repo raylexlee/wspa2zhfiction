@@ -21,3 +21,9 @@ bash raylex.sh
 #mv t coverparameters.txt
 cd ..
 ./mk_text_subdir $BOOK
+cd $BOOK
+rm *
+mv text/* .
+ ../cp_dog9_text_subdir
+ $HOME/text2zhtts_raylex_debian
+ $HOME/go2hanley

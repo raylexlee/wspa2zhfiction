@@ -7,6 +7,7 @@
 #REGEX=${1-^　　[一二三四五六七八九十]*$}
 #REGEX=${1-^[^　]}
 REGEX=${1-^[第附後]}
+#REGEX=${1-^[^　一二三四五六七八十][^、]}
 grep $REGEX converted.txt | nl -n rz -w 3 -s " " > coverparameters.txt 
 node ../getlast_chapter.js > last_chapter.txt
 csplit -k -n 3 converted.txt "/$REGEX/" '{9999}'

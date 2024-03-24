@@ -1,9 +1,3 @@
-./gen_coverparameters 十宗罪6 http://365novel.com/book2/10876/
-./gen_coverparameters 十宗罪5 http://365novel.com/book4/10664/
-./gen_coverparameters 十宗罪4 http://365novel.com/book4/9336/
-./gen_coverparameters 十宗罪3 http://365novel.com/book/4517/
-./gen_coverparameters 十宗罪2 http://365novel.com/book/4515/
-./gen_coverparameters 十宗罪1 http://365novel.com/book/4514/
-./gen_coverparameters 十宗罪0 http://365novel.com/book/4609/
-./gen_coverparameters 秦書 http://365novel.com/book/4608/
-./gen_coverparameters 殘疾人宣言 http://365novel.com/book/4516/
+./gethaodooEpub.sh 舊版射鵰英雄傳 'https://www.haodoo.net/?M=book&P=301'
+./gethaodooEpub.sh 舊版神鵰俠侶 'https://www.haodoo.net/?M=book&P=354'
+./gethaodooEpub.sh 舊版倚天屠龍記 'https://www.haodoo.net/?M=book&P=412'

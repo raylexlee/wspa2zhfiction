@@ -16,14 +16,8 @@ done
 ../prepare_coverparameters
 ../mov_with
 bash raylex.sh
-#awk '{ print $2;}' < coverparameters.txt | awk -f ../fillSection.awk  | nl -n rz -w 3 -s " " > t
-#cp coverparameters.txt coverparameters.txt.original
-#mv t coverparameters.txt
 cd ..
 ./mk_text_subdir $BOOK
 cd $BOOK
-rm *
-mv text/* .
- ../cp_dog9_text_subdir
- $HOME/text2zhtts_raylex_debian
- $HOME/go2hanley
+$HOME/text2zhtts_raylex_debian
+$HOME/go2hanley

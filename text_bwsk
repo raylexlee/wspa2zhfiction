@@ -18,6 +18,7 @@ else
 echo 001 > last_chapter.txt
 echo 001 $BOOK > coverparameters.txt
 fi
+rm -rf 'C:'*
 cd ..
-./mk_text_subdir_nosend $BOOK
+./mk_text_subdir $BOOK
 

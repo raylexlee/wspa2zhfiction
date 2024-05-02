@@ -14,7 +14,7 @@ function Process(data) {
            punctuationIndex++;
          }
 }
-const data=fs.readFileSync('001.txt','utf8');
+const data=fs.readFileSync('176.txt','utf8');
 Process(data);
 const width=punctuationPosition.map((e,i) => i===0 ? e : (e - punctuationPosition[i-1]))
 width.forEach((e,i) => { if (e > 50) console.log(e,data.substring(punctuationPosition[i-1],punctuationPosition[i]));})   

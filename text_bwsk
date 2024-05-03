@@ -14,7 +14,7 @@ cat chaptertitlelinks.txt | awk '{printf("%s %s\n", $1, $2);}' > coverparameters
 cat chaptertitlelinks.txt | awk '{printf("../getchapter %s > %s.txt\n", $3, $1);}' > raylex.sh
 bash raylex.sh
 else
-../getbwsk.js $BOOK_LINK | sed '/^回目錄/ d' > 001.txt
+../getbwsk.js $BOOK_LINK | sed -e '/^前一頁/ d' -e '/^回目錄/ d' -e '/^後一頁/ d' -e '/^　　---------/,$ d' | opencc > 001.txt
 echo 001 > last_chapter.txt
 echo 001 $BOOK > coverparameters.txt
 fi

@@ -20,4 +20,4 @@ cd ..
 ./mk_text_subdir $BOOK
 cd $BOOK
 $HOME/text2zhtts_raylex_debian
-$HOME/go2hanley
+#$HOME/go2hanley

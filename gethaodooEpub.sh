@@ -12,12 +12,13 @@ do
   ebook-convert $i t.txt  
   sed '1,/《好讀書櫃》/ d' < t.txt >> converted.txt
 done 
-#../prepare_coverparameters ^[卷第]
-../prepare_coverparameters
+../prepare_coverparameters ^[第]
+#../prepare_coverparameters ^[引尾第]
+#../prepare_coverparameters
 ../mov_with
 bash raylex.sh
 cd ..
 ./mk_text_subdir $BOOK
 cd $BOOK
-$HOME/text2zhtts_raylex_debian
+$HOME/text2raylexdebian
 #$HOME/go2hanley

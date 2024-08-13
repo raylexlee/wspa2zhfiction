@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+CHAPTER_LINK=${1?"missing chapter link"}
+$HOME/wspa2zhfiction/getbwsk.js $CHAPTER_LINK | sed -e '1,/^設置X閱讀主題/ d' -e '/點贊目錄+書簽下一頁/,$ d' -e 's/^title..;//' -e '/^theme..;$/ d' -e '/^$/ d' -e 's/^正文 //' -e '/adsbygoogle/ d' 

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+BOOK_AUTHOR=${1?"missing book title"}
+BOOK=${2?"missing book title"}
+NUMBER=${3?"missing book number"}
+BOOK_PATH=public/text/$BOOK
+BOOK_LINK=https://tw.yodu.org/book/$NUMBER/
+[ -d $BOOK_PATH ] || mkdir $BOOK_PATH
+cd $BOOK_PATH	
+$HOME/wspa2zhfiction/getlinks.js $BOOK_LINK | grep \/$NUMBER\/ | sed -e '1,2 d' -e 's/ \([^h]\)/_\1/g' | nl -n rz -w 3 -s " "  > chaptertitlelinks.txt
+cat chaptertitlelinks.txt | awk '{printf("%s %s\n", $1, $2);}' > coverparameters.txt
+cat chaptertitlelinks.txt | awk '{printf("$HOME/wspa2zhfiction/getyoduchapter %s > %s.txt\n", $3, $1);}' > raylex.sh
+bash raylex.sh
+rm -rf 'C:'*

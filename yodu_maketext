@@ -12,4 +12,4 @@ $HOME/wspa2zhfiction/getlinks.js $BOOK_LINK | grep \/$NUMBER\/ | sed -e '1,2 d' 
 bash raylex.sh
 for i in $(ls 0*); do j=$(echo $i | tr -d .tx); echo $j $(head -1 $i | sed 's/ /_/g'); done > coverparameters.txt
 rm raylex.sh
-rm -rf 'C:'*
+$HOME/wspa2zhfiction/CleanUpLighthouseWSL.sh

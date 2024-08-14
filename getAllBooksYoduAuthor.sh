@@ -13,4 +13,4 @@ else
    echo $BOOKS | sed 's#for-author #for-author\n#g' | sed '/^[^h]\{21,\}/ d' | sed 's#\([^ ]*\)\s.*book.\([0-9]*\)..for.*#'"$AUTHOR"' \1 \2#'
 fi 
 done >> $ALLBOOKS
-rm -rf 'C:'*
+$HOME/wspa2zhfiction/CleanUpLighthouseWSL.sh

@@ -2,6 +2,7 @@
 BOOK_AUTHOR=${1?"missing book title"}
 BOOK=${2?"missing book title"}
 NUMBER=${3?"missing book number"}
+start=$(date +%s)
 AUTHOR_BOOK="$BOOK_AUTHOR $BOOK"
 [ "$AUTHOR_BOOK" = "$(grep "$AUTHOR_BOOK" public/pairs.txt)" ] || (echo $AUTHOR_BOOK >> public/pairs.txt)
 BOOK_PATH=public/text/$BOOK
@@ -13,3 +14,5 @@ bash raylex.sh
 for i in $(ls 0*); do j=$(echo $i | tr -d .tx); echo $j $(head -1 $i | sed 's/ /_/g'); done > coverparameters.txt
 rm raylex.sh
 $HOME/wspa2zhfiction/CleanUpLighthouseWSL.sh
+end=$(date +%s)
+echo $((end - start))s $AUTHOR_BOOK

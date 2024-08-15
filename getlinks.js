@@ -4,12 +4,14 @@ const chromeLauncher = require('chrome-launcher');
 const fs = require('fs');
 
 function launchChrome(headless=true) {
-  const chromeParams = {};
-  chromeParams['chromeFlags'] = [
+  const chromeParams = {
+    port: 9222,
+    chromeFlags: [
       '--window-size=412,732',
       '--disable-gpu',
       headless ? '--headless' : ''
-    ];
+    ]
+  };
   if (process.platform === 'darwin') {
     chromeParams.chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
   } else if (fs.existsSync('/usr/bin/google-chrome')) {
@@ -22,7 +24,7 @@ function launchChrome(headless=true) {
 (async function() {
 
 const chrome = await launchChrome();
-const protocol = await CDP({port: chrome.port});
+const protocol = await CDP({port: 9222});
 
 // Extract the DevTools protocol domains we need and enable them.
 // See API docs: https://chromedevtools.github.io/devtools-protocol/

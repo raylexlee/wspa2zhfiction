@@ -4,7 +4,9 @@ BOOK=${2?"missing book title"}
 NUMBER=${3?"missing book number"}
 start=$(date +%s)
 AUTHOR_BOOK="$BOOK_AUTHOR $BOOK"
+[ -f public/pairs.txt ] || touch public/pairs.txt
 [ "$AUTHOR_BOOK" = "$(grep "$AUTHOR_BOOK" public/pairs.txt)" ] || (echo $AUTHOR_BOOK >> public/pairs.txt)
+[ -d public/text ] || mkdir public/text
 BOOK_PATH=public/text/$BOOK
 BOOK_LINK=https://tw.yodu.org/book/$NUMBER/
 [ -d $BOOK_PATH ] || mkdir $BOOK_PATH

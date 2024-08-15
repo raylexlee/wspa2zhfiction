@@ -10,9 +10,11 @@ function launchChrome(headless=true) {
       '--disable-gpu',
       headless ? '--headless' : ''
     ];
-  if (fs.existsSync('/usr/bin/google-chrome')) {
-    chromeParams['chromePath'] = '/usr/bin/google-chrome';
-  }  
+  if (process.platform === 'darwin') {
+    chromeParams.chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+  } else if (fs.existsSync('/usr/bin/google-chrome')) {
+    chromeParams.chromePath = '/usr/bin/google-chrome';
+  }
   return chromeLauncher.launch(chromeParams);
 }
 

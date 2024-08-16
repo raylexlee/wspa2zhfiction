@@ -34,7 +34,7 @@ WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'bo
 # 提取所有鏈接及其文本
 links = driver.find_elements(By.TAG_NAME, 'a')
 for link in links:
-    text = link.text.replace(' ', '_')  # 將空格替換為下劃線
+    text = driver.execute_script("return arguments[0].innerText.replace(/\\s+/g, '_');", link)
     href = link.get_attribute('href')
     print(f"{text} {href}")
 

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+CHAPTER_LINK=${1?"missing chapter link"}
+FILE=${2?"missing file such as 001.txt,002.txt"}
+BASE=$(echo $CHAPTER_LINK | sed 's/.html$//')
+sed '1 d' < $FILE > b.txt
+for i in $(seq 2 20)
+do
+RLINK="$BASE""_$i.html"
+$HOME/wspa2zhfiction/getbwsk.js $RLINK | sed -e '1,/^設置X閱讀主題/ d' -e '/點贊目錄+書簽/,$ d' -e 's/^title..;//' -e '/^theme..;$/ d' -e '/^$/ d' -e 's/^正文 //' -e '/adsbygoogle/ d' | sed '1 d' > r.txt
+if cmp -s b.txt r.txt; then
+break
+fi
+if [ ! -s r.txt ]; then
+break
+else
+cat r.txt >> $FILE
+fi
+done 
+rm r.txt
+rm b.txt

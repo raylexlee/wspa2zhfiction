@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+BOOK_AUTHOR=${1?"missing book title"}
+BOOK=${2?"missing book title"}
+NUMBER=${3?"missing book number"}
+start=$(date +%s)
+AUTHOR_BOOK="$BOOK_AUTHOR $BOOK"
+BOOK_PATH=public/text/$BOOK
+BOOK_LINK=https://tw.yodu.org/book/$NUMBER/
+cd $BOOK_PATH	
+$HOME/wspa2zhfiction/getlinks.js $BOOK_LINK | grep \/$NUMBER\/ | sed -e '1,2 d' -e 's/ \([^h]\)/_\1/g' | nl -n rz -w 3 -s " "  | awk '{printf("$HOME/wspa2zhfiction/resyoduchapter %s %s.txt\n", $3, $1);}' > raylex.sh
+bash raylex.sh
+rm raylex.sh
+$HOME/wspa2zhfiction/CleanUpLighthouseWSL.sh
+end=$(date +%s)
+echo $((end - start))s $AUTHOR_BOOK

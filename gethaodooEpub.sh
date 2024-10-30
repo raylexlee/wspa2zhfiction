@@ -7,14 +7,14 @@ cd $BOOK
 rm -rf 'C:'*
 bash qming.sh
 cp /dev/null converted.txt
-for i in $(ls *epub) 
+for i in $(ls -r -t *epub) 
 do 
   ebook-convert $i t.txt  
   sed '1,/《好讀書櫃》/ d' < t.txt >> converted.txt
 done 
-../prepare_coverparameters ^[第]
+#../prepare_coverparameters ^[第]
 #../prepare_coverparameters ^[引尾第]
-#../prepare_coverparameters
+../prepare_coverparameters
 ../mov_with
 bash raylex.sh
 cd ..

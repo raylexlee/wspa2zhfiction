@@ -11,7 +11,7 @@ if [[ -d text ]]; then :; else
 fi  
 for i in $(ls [0-9]*txt)
 do
-sed -e '/^\ *$/ d' -e 's/什麼/甚麼/g' < $i > text/$i
+sed -e '/^\ *$/ d' -e 's/什麼/甚麼/g' < $i | sed '$ s#\(.*[^；。！？;.!?]\)#\1。#' > text/$i
 done
 cp coverparameters.txt text/
 

@@ -14,8 +14,8 @@ function launchChrome(headless=true) {
   };
   if (process.platform === 'darwin') {
     chromeParams.chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-  } else if (fs.existsSync('/usr/bin/google-chrome')) {
-    chromeParams.chromePath = '/usr/bin/google-chrome';
+  } else if (fs.existsSync('/usr/bin/microsoft-edge')) {
+    chromeParams.chromePath = '/usr/bin/microsoft-edge';
   }
   return chromeLauncher.launch(chromeParams);
 }

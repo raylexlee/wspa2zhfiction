@@ -10,8 +10,8 @@ function launchChrome(headless=true) {
       '--disable-gpu',
       headless ? '--headless' : ''
     ];
-  if (fs.existsSync('/usr/bin/google-chrome')) {
-    chromeParams['chromePath'] = '/usr/bin/google-chrome';
+  if (fs.existsSync('/usr/bin/microsoft-edge')) {
+    chromeParams['chromePath'] = '/usr/bin/microsoft-edge';
   }  
   return chromeLauncher.launch(chromeParams);
 }

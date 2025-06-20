@@ -20,5 +20,5 @@ bash raylex.sh
 cd ..
 ./mk_text_subdir $BOOK
 cd $BOOK
-$HOME/text2raylexdebian
+$HOME/text2zhtts_raylex_debian
 #$HOME/go2hanley

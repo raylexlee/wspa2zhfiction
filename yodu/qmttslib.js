@@ -15,3 +15,8 @@ function dynamicScript(srcUrl, onloadMethod) {
     script.onload = onloadMethod;
     document.body.appendChild(script);
 }
+function stringToHash(string) {
+    return string.split('').reduce((hash, char) => {
+        return char.charCodeAt(0) + ((hash << 5) - hash);
+    }, 0);
+}

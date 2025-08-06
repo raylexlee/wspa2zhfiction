@@ -1,4 +1,5 @@
 let adjustment = 0.4;
+let audio;
 let title, myContent, myChapterList, myRange, myBook, myAutoplay;
 let nDigits = 3;
 let myPauseCancel;
@@ -91,6 +92,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 const contentUrl = chapter => `text/${title}/${chapter.substring(0,nDigits)}.txt`;
 function myInit() {
   document.title = title;
+  audio = document.getElementById('audio');
+  audio.onended = () => { audio.play(); };
+  audio.onplay = speak;
+  audio.onpause = pauseResume;
+  myContent = document.getElementById('myContent');
   myContent = document.getElementById('myContent');
   myContent.style.lineHeight=2;
   myChapterList = document.getElementById('myChapterList');
@@ -259,6 +265,7 @@ function speak(){
     justCancel = true;
     synth.cancel();
     synth.speak(utterThis);
+    audio.play();
     justCancel = false;
 //    const portion = start / myContent.value.length;
 //    myContent.scrollTop = portion * myContent.scrollHeight - adjustment * myContent.offsetHeight;
@@ -278,6 +285,7 @@ function pauseResume() {
   if (synth.speaking !== true) {
     return;
   }
+  audio.pause();
   synth.cancel();
   localStorage.setItem('wspa_positionIndex'+title, positionIndex);
   updateQR(title, activeEpisode, positionIndex);
